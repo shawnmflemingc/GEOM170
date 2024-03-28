@@ -45,7 +45,7 @@ Inside the `<script>` tag, start by initializing your Leaflet map:
 var map = L.map('myMapId').setView([44.342, -78.741], 9); // Adjust center and zoom level as needed
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors'
+    attribution: '(C) OSM contributors, NTP'
 }).addTo(map);
 ```
 
@@ -58,7 +58,7 @@ var geojsonLayer;
 
 // Tornado Event Summaries from NTP at https://ntpopendata-westernu.opendata.arcgis.com/datasets/ntp-event-summaries-stakeholder/explore
 
-fetch('../datasets/ntp2023summary.geojson')  // This is static data, but you could load the data from the NTP open data repository directly!
+fetch('https://shawnmflemingc.github.io/Geom170/datasets/ntp2023summary.geojson')  // Modify to use your data source
     .then(response => response.json())
     .then(data => {
         geojsonLayer = L.geoJSON(data, {
@@ -73,11 +73,11 @@ fetch('../datasets/ntp2023summary.geojson')  // This is static data, but you cou
 
 ### 4. Initialize the Chart
 
-Create a function to initialize the Chart.js chart. This function will also be used to update the chart data:
+Create a function to initialize the Chart.js chart with the same data. This function will also be used to update the chart data when the map pans:
 
 ```javascript
 var myChart;
-var chartCtx = document.getElementById('myChart').getContext('2d');
+var chartCtx = document.getElementById('myChart').getContext('2d'); // This binds to the div with the id myChart on the webpage
 
 function updateChart() {
     var visibleFeatures = [];
@@ -119,7 +119,8 @@ function updateChart() {
                 scales: {
                     y: {
                         beginAtZero: true
-                    }
+                    },
+                    maintainAspectRatio: false
                 }
             }
         });
