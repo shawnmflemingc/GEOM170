@@ -1,6 +1,6 @@
-# Leaflet and Chart.js Dashboard
+# Leaflet and Chart.js Dashboard - 2023 Northern Tornado Project Data
 
-Creating an interactive dashboard where a Leaflet map and a Chart.js chart are linked, such that the chart updates based on the map's view extent, involves several steps. This example assumes you have a basic understanding of both Leaflet and Chart.js, as well as how to handle GeoJSON data.
+Using the data from the (Northern Tornado Project)[https://www.uwo.ca/ntp/index.html] this tutorial will create an interactive dashboard where a Leaflet map and a Chart.js chart are linked where the chart updates based on the data within the map's view extents. The activity is broken up into steps to explain how each works, but copying/pasting each code block into its appropriate section will make it work. 
 
 For this example, the map will display markers for each feature in the GeoJSON data, and the chart will update to show the count of features by month that are currently visible in the map's view. Here's a step-by-step guide:
 
@@ -12,18 +12,19 @@ Start with the basic HTML structure, including loading the Leaflet and Chart.js 
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Map and Chart Dashboard</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        #map { height: 400px; }
-        #chartContainer { width: 400px; height: 200px; }
-    </style>
+<title>NTP 2023 Map and Chart Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+	body {padding: 0;margin: 0;}
+	#myMapId { height: 50vh; }
+	#chartContainer { width: 100vw; height: 50vh; }
+</style>
 </head>
 <body>
 
-<div id="map"></div>
+<div id="myMapId"></div>
 <div id="chartContainer">
     <canvas id="myChart"></canvas>
 </div>
@@ -41,7 +42,7 @@ Start with the basic HTML structure, including loading the Leaflet and Chart.js 
 Inside the `<script>` tag, start by initializing your Leaflet map:
 
 ```javascript
-var map = L.map('map').setView([51.505, -0.09], 13); // Adjust center and zoom level as needed
+var map = L.map('myMapId').setView([44.342, -78.741], 9); // Adjust center and zoom level as needed
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
@@ -55,7 +56,9 @@ Use Leaflet's `L.geoJSON` to add your GeoJSON data to the map. You'll need to fe
 ```javascript
 var geojsonLayer;
 
-fetch('../datasets/ntp2023summary.geojson')
+// Tornado Event Summaries from NTP at https://ntpopendata-westernu.opendata.arcgis.com/datasets/ntp-event-summaries-stakeholder/explore
+
+fetch('../datasets/ntp2023summary.geojson')  // This is static data, but you could load the data from the NTP open data repository directly!
     .then(response => response.json())
     .then(data => {
         geojsonLayer = L.geoJSON(data, {
