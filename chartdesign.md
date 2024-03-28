@@ -1,3 +1,5 @@
+# Chart Design for Dashboards with Maps
+
 Similar to cartographic design principles for websites, designing interactive web dashboards that effectively display data involves a blend of aesthetics, functionality, and user experience principles. Here are some best practices to consider:
 
 ## 1. Prioritize Clarity and Simplicity
