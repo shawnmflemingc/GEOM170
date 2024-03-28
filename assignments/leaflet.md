@@ -4,7 +4,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
 ## Setting Up Your First Map
 
-1. **HTML File**: Start by creating an HTML file. This will be the backbone of your project. Here's a minimal example:
+1. **HTML File**: Start by creating an HTML file. This will be the backbone of your project. Here's a minimal example requiring you to fill in the javascript code (provided below) in the script section:
 
     ```html
     <!DOCTYPE html>
@@ -47,17 +47,22 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
     This code adds the OpenStreetMap tiles to your map, providing a detailed and styled base map.
 
-### Exploring Further
+## Enhancing the Interface
 
-- **Markers**: You can add markers to your map to denote points of interest. For example, to add a marker at the same coordinates we centered our map on, you could use:
+There are many ways to make this even better. Find the API guide at the end of this tutorial for detailed documentation on Leaflet's classes, methods, and options. But first explore basic concepts using these provided code snipits here:
+
+### Markers
+
+You can add markers to your map to denote points of interest. For example, to add a marker at the same coordinates we centered our map on, you could use:
 
     ```javascript
     L.marker([44.342, -78.741]).addTo(map)
-        .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable.')
+        .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable using <i>HTML</i>!.')
         .openPopup();
     ```
+### Loading Data like GeoJSON
 
-- **GeoJSON**: Leaflet has strong support for GeoJSON, a format for encoding a variety of geographic data structures. Adding GeoJSON data can allow you to represent more complex features like lines, shapes, and multi-part geometries.
+Leaflet has strong support for GeoJSON, a format for encoding a variety of geographic data structures. Adding GeoJSON data can allow you to represent more complex features like lines, shapes, and multi-part geometries.
 
 ```javascript
         // URL of the GeoJSON data
@@ -80,12 +85,49 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
                 // Log any errors to the console
                 console.error('Error fetching GeoJSON data:', error);
             });
-
 ```
 
-- **Events**: Leaflet makes it easy to respond to user actions through event listeners. For instance, you might want to execute some code when the user clicks on the map.
+In this example, replace `https://shawnmflemingc.github.io/Geom170/datasets/2024eclipsepath.geojson` with the actual URL where your GeoJSON file is hosted. The fetch function requests the GeoJSON file, and upon successful retrieval, the `.json()` method parses the response body as JSON. The parsed GeoJSON data is then added to the map using `L.geoJSON(data).addTo(map)`.
 
-### Resources
+> [!IMPORTANT]
+> CORS (Cross-Origin Resource Sharing) by default disallows data being "fetched" from servers that are not on the same domain (not on github.io for example). Ensure that the server hosting your GeoJSON file supports CORS (Cross-Origin Resource Sharing). If the request from the webpage is made from a different domain than where your Leaflet map file is hosted, cross-origin restrictions will result in your GeoJSON failing to be displayed.
+> You can see if this is the case by viewing the Developer Console in the web browser. 
+
+### Map Events (detecting user interaction)
+
+Leaflet Events make it easy to respond to user actions through event listeners. For instance, you might want to execute some code when the user clicks on the map.
+
+```javascript
+// Click event on the map
+map.on('click', function(e) {
+    var coord = e.latlng; // Get the coordinates of the click
+    var lat = coord.lat; // Latitude
+    var lng = coord.lng; // Longitude
+
+    // Display the latitude and longitude of the clicked location
+    alert("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+
+    // Add a marker at the clicked location
+    var marker = L.marker([lat, lng]).addTo(map);
+
+    // Bind a popup to the marker
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+});
+
+// Zoom event on the map
+map.on('zoomend', function() {
+    // Display the current zoom level
+    alert("Current Zoom Level: " + map.getZoom());
+});
+```
+
+In this example:
+
+When the user clicks anywhere on the map, an alert displays the latitude and longitude of the clicked location. Then, a marker is added at that location with a popup attached to it.
+The map's zoomend event listener displays the current zoom level whenever the user changes the zoom level on the map.
+These event handlers demonstrate basic interactions and responses to user actions in Leaflet, making your map more interactive and informative. You can extend these concepts to handle more complex events and interactions tailored to your application's needs.
+
+## Resources
 
 As you dive into Leaflet, here are a few resources that might be helpful:
 
