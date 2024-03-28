@@ -57,35 +57,35 @@ There are many ways to make this even better. Find the API guide at the end of t
 You can add markers to your map to denote points of interest. For example, to add a marker at the same coordinates we centered our map on, you could use:
 
 ```javascript
-    L.marker([44.342, -78.741]).addTo(map)
-        .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable using <i>HTML</i>!.')
-        .openPopup();
+L.marker([44.342, -78.741]).addTo(map)
+    .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable using <i>HTML</i>!.')
+    .openPopup();
 ```
 ### Loading Data like GeoJSON
 
 Leaflet has strong support for GeoJSON, a format for encoding a variety of geographic data structures. Adding GeoJSON data can allow you to represent more complex features like lines, shapes, and multi-part geometries.
 
 ```javascript
-        // URL of the GeoJSON data
-        var geojsonURL = 'https://shawnmflemingc.github.io/Geom170/datasets/2024eclipsepath.geojson';
+// URL of the GeoJSON data
+var geojsonURL = 'https://shawnmflemingc.github.io/Geom170/datasets/2024eclipsepath.geojson';
 
-        // Fetch the GeoJSON data
-        fetch(geojsonURL)
-            .then(function(response) {
-                // Check if the request was successful
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();  // Parse the response body as JSON
-            })
-            .then(function(data) {
-                // Add the GeoJSON data to the map
-                L.geoJSON(data).addTo(map);
-            })
-            .catch(function(error) {
-                // Log any errors to the console
-                console.error('Error fetching GeoJSON data:', error);
-            });
+// Fetch the GeoJSON data
+fetch(geojsonURL)
+    .then(function(response) {
+        // Check if the request was successful
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();  // Parse the response body as JSON
+    })
+    .then(function(data) {
+        // Add the GeoJSON data to the map
+        L.geoJSON(data).addTo(map);
+    })
+    .catch(function(error) {
+        // Log any errors to the console
+        console.error('Error fetching GeoJSON data:', error);
+    });
 ```
 
 In this example, replace `https://shawnmflemingc.github.io/Geom170/datasets/2024eclipsepath.geojson` with the actual URL where your GeoJSON file is hosted. The fetch function requests the GeoJSON file, and upon successful retrieval, the `.json()` method parses the response body as JSON. The parsed GeoJSON data is then added to the map using `L.geoJSON(data).addTo(map)`.
