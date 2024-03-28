@@ -32,7 +32,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 2. **Initializing the Map**: In the JavaScript section within the `<script>` tags, you can initialize your map and set its view to a specific geographical point and zoom level:
 
     ```javascript
-    var map = L.map('map').setView([51.505, -0.09], 13);
+    var map = L.map('map').setView([44.342, -78.741], 13);
     ```
 
     This code creates a new map in the 'map' div, centers it on the coordinates `[51.505, -0.09]` (latitude, longitude), and sets the zoom level to `13`.
@@ -52,12 +52,36 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 - **Markers**: You can add markers to your map to denote points of interest. For example, to add a marker at the same coordinates we centered our map on, you could use:
 
     ```javascript
-    L.marker([51.505, -0.09]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+    L.marker([44.342, -78.741]).addTo(map)
+        .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable.')
         .openPopup();
     ```
 
 - **GeoJSON**: Leaflet has strong support for GeoJSON, a format for encoding a variety of geographic data structures. Adding GeoJSON data can allow you to represent more complex features like lines, shapes, and multi-part geometries.
+
+```javascript
+        // URL of the GeoJSON data
+        var geojsonURL = 'https://shawnmflemingc.github.io/Geom170/datasets/2024eclipsepath.geojson';
+
+        // Fetch the GeoJSON data
+        fetch(geojsonURL)
+            .then(function(response) {
+                // Check if the request was successful
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();  // Parse the response body as JSON
+            })
+            .then(function(data) {
+                // Add the GeoJSON data to the map
+                L.geoJSON(data).addTo(map);
+            })
+            .catch(function(error) {
+                // Log any errors to the console
+                console.error('Error fetching GeoJSON data:', error);
+            });
+
+```
 
 - **Events**: Leaflet makes it easy to respond to user actions through event listeners. For instance, you might want to execute some code when the user clicks on the map.
 
