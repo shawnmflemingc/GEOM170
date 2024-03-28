@@ -1,6 +1,6 @@
 # Leaflet and Chart.js Dashboard - 2023 Northern Tornado Project Data
 
-Using the data from the [Northern Tornado Project](https://www.uwo.ca/ntp/index.html) this tutorial will create an interactive dashboard where a Leaflet map and a Chart.js chart are linked where the chart updates based on the data within the map's view extents. The activity is broken up into steps to explain how each works, but copying/pasting each code block into its appropriate section will make it work. 
+Using the data from the [Northern Tornado Project](https://www.uwo.ca/ntp/index.html) this tutorial will create an interactive dashboard where a Leaflet map and a Chart.js chart are linked where the chart updates based on the data within the map's view extents. The activity is broken up into steps to explain how each works, but copying/pasting each section and pasting that block into its appropriate section on the HTML structure will get it working. 
 
 For this example, the map will display markers for each feature in the GeoJSON data, and the chart will update to show the count of features by month that are currently visible in the map's view. Here's a step-by-step guide:
 
@@ -138,4 +138,4 @@ map.on('moveend', function() {
 });
 ```
 
-This code structure sets up a basic linked view between a Leaflet map and a Chart.js chart, where the chart updates to reflect data (grouped by the `month` field) for GeoJSON features currently visible in the map's view. Adjust the GeoJSON structure and field names according to your specific dataset.
+This code structure sets up a basic linked view between a Leaflet map and a Chart.js chart, where the chart updates to reflect data (grouped by the `month` field) for GeoJSON features currently visible in the map's view. Next steps to improve this could be to make a click event on each pin to display the relevant tornado information in a popup, or perhaps improve the map cartography and graph colouring. 
