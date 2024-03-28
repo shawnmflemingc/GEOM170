@@ -1,6 +1,6 @@
 # Leaflet and Chart.js Dashboard - 2023 Northern Tornado Project Data
 
-Using the data from the (Northern Tornado Project)[https://www.uwo.ca/ntp/index.html] this tutorial will create an interactive dashboard where a Leaflet map and a Chart.js chart are linked where the chart updates based on the data within the map's view extents. The activity is broken up into steps to explain how each works, but copying/pasting each code block into its appropriate section will make it work. 
+Using the data from the [Northern Tornado Project](https://www.uwo.ca/ntp/index.html) this tutorial will create an interactive dashboard where a Leaflet map and a Chart.js chart are linked where the chart updates based on the data within the map's view extents. The activity is broken up into steps to explain how each works, but copying/pasting each code block into its appropriate section will make it work. 
 
 For this example, the map will display markers for each feature in the GeoJSON data, and the chart will update to show the count of features by month that are currently visible in the map's view. Here's a step-by-step guide:
 
