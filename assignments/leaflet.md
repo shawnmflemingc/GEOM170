@@ -6,7 +6,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
 1. **HTML File**: Start by creating an HTML file. This will be the backbone of your project. Here's a minimal example requiring you to fill in the javascript code (provided below) in the script section:
 
-    ```html
+```html
     <!DOCTYPE html>
     <html>
     <head>
@@ -21,7 +21,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
         </script>
     </body>
     </html>
-    ```
+```
 
     In this HTML skeleton:
     - The Leaflet CSS file from the CDN unpkg.com is included in the `<head>` to style the map correctly. Note the SRI is provided to verify the package from the CDN (see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity for more information)
@@ -39,11 +39,11 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
 3. **Adding a Tile Layer**: Maps are made up of tiles. You can add a tile layer to your map using a URL template where tiles are fetched from. OpenStreetMap is a common source for these tiles:
 
-    ```javascript
+```javascript
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors'
     }).addTo(map);
-    ```
+```
 
     This code adds the OpenStreetMap tiles to your map, providing a detailed and styled base map.
 
@@ -55,11 +55,11 @@ There are many ways to make this even better. Find the API guide at the end of t
 
 You can add markers to your map to denote points of interest. For example, to add a marker at the same coordinates we centered our map on, you could use:
 
-    ```javascript
+```javascript
     L.marker([44.342, -78.741]).addTo(map)
         .bindPopup('A pretty CSS3 popup at Fleming College.<br> Easily customizable using <i>HTML</i>!.')
         .openPopup();
-    ```
+```
 ### Loading Data like GeoJSON
 
 Leaflet has strong support for GeoJSON, a format for encoding a variety of geographic data structures. Adding GeoJSON data can allow you to represent more complex features like lines, shapes, and multi-part geometries.
