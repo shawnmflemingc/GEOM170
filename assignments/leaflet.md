@@ -115,7 +115,7 @@ map.on('click', function(e) {
     var marker = L.marker([lat, lng]).addTo(map);
 
     // Bind a popup to the marker
-    marker.bindPopup("<b>LL:"+lat+","+lng+"<b>").openPopup();
+    marker.bindPopup("<b>LL:</b>"+lat+","+lng+"").openPopup();
 });
 
 // Zoom event on the map
