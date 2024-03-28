@@ -30,8 +30,8 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
     - A `<div>` element with an id of "map" is where our map will appear. We set a height style to ensure it's visible. Make this 100% on height and width to make it display the full screen. 
     - The Leaflet JavaScript library is included right before our script tag. This ensures it's loaded before we try to use it in our JavaScript code.
 
-    > [!NOTE]
-    > The [integrity hashes](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) are included to ensure Leaflet is secure when retrieving from the unpkg CDN. For more information or to download Leaflet see [https://leafletjs.com/download.html](https://leafletjs.com/download.html). 
+> [!NOTE]
+> The [integrity hashes](https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity) are included to ensure Leaflet is secure when retrieving from the unpkg CDN. For more information or to download Leaflet see [https://leafletjs.com/download.html](https://leafletjs.com/download.html). 
 
 3. **Initializing the Map**: In the JavaScript section within the `<script>` tags, you can initialize your map and set its view to a specific geographical point and zoom level:
 
