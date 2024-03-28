@@ -43,35 +43,35 @@ For those less familiar with CSS or looking for a quicker solution, CSS framewor
     ```
 Other frameworks that might be of interest to investigate: 
 
-### 1. **Foundation by ZURB**
+### **Foundation by ZURB**
 - Foundation is a responsive front-end framework similar to Bootstrap but with its own set of components and styles. It's known for being mobile-first and highly customizable.
 - Website: [Foundation](https://get.foundation/)
 
-### 2. **Bulma**
+### **Bulma**
 - Bulma is a modern CSS framework based on Flexbox. It's lightweight, simple to understand, and purely CSS (no JavaScript included). Bulma is known for its clean syntax and good documentation.
 - Website: [Bulma](https://bulma.io/)
 
-### 3. **Materialize**
+### **Materialize**
 - Materialize is a responsive front-end framework based on Material Design by Google. It provides ready-to-use buttons, icons, forms, and various other components that adhere to Material Design principles.
 - Website: [Materialize](https://materializecss.com/)
 
-### 4. **Semantic UI**
+### **Semantic UI**
 - Semantic UI is a development framework that helps create beautiful, responsive layouts using human-friendly HTML. It's known for its use of natural language principles, making the code more readable and easier to understand.
 - Website: [Semantic UI](https://semantic-ui.com/)
 
-### 5. **Skeleton**
+### **Skeleton**
 - Skeleton is a lightweight CSS framework that contains just the essentials to kick-start the development of responsive websites. It's best suited for smaller projects that don't require the full feature set of larger frameworks like Bootstrap.
 - Website: [Skeleton](http://getskeleton.com/)
 
-### 6. **UIkit**
+### **UIkit**
 - UIkit is a lightweight and modular front-end framework for developing fast and powerful web interfaces. It offers a comprehensive collection of HTML, CSS, and JS components which are simple to use, easy to customize, and extendable.
 - Website: [UIkit](https://getuikit.com/)
 
-### 7. **Milligram**
+### **Milligram**
 - Milligram is a minimalist CSS framework designed for better performance and higher productivity with fewer properties to reset, resulting in cleaner code. It's great for projects that value simplicity and speed.
 - Website: [Milligram](https://milligram.io/)
 
-### 8. **Tailwind UI**
+### **Tailwind UI**
 - Tailwind UI is a collection of professionally designed, pre-built, fully responsive HTML snippets you can drop into your Tailwind projects. It's built by the creators of Tailwind CSS and provides components and layouts for various applications.
 - Website: [Tailwind UI](https://tailwindui.com/)
 
