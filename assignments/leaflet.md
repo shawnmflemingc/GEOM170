@@ -23,7 +23,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
     </html>
     ```
 
-    In this HTML skeleton:
+In this HTML skeleton:
     - The Leaflet CSS file from the CDN unpkg.com is included in the `<head>` to style the map correctly. Note the SRI is provided to verify the package from the CDN (see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity for more information)
     - Downloading and using the package is an option, but not a best practice (see https://leafletjs.com/download.html). 
     - A `<div>` element with an id of "map" is where our map will appear. We set a height style to ensure it's visible.
@@ -31,21 +31,21 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
 2. **Initializing the Map**: In the JavaScript section within the `<script>` tags, you can initialize your map and set its view to a specific geographical point and zoom level:
 
-    ```javascript
-    var map = L.map('map').setView([44.342, -78.741], 13);
-    ```
+```javascript
+var map = L.map('map').setView([44.342, -78.741], 13);
+```
 
-    This code creates a new map in the 'map' div, centers it on the coordinates `[51.505, -0.09]` (latitude, longitude), and sets the zoom level to `13`.
+This code creates a new map in the 'map' div, centers it on the coordinates `[51.505, -0.09]` (latitude, longitude), and sets the zoom level to `13`.
 
 3. **Adding a Tile Layer**: Maps are made up of tiles. You can add a tile layer to your map using a URL template where tiles are fetched from. OpenStreetMap is a common source for these tiles:
 
 ```javascript
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
 ```
 
-    This code adds the OpenStreetMap tiles to your map, providing a detailed and styled base map.
+This code adds the OpenStreetMap tiles to your map, providing a detailed and styled base map.
 
 ## Enhancing the Interface
 
