@@ -23,13 +23,14 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
     </html>
     ```
 
-In this HTML skeleton:
-    - The Leaflet CSS file from the CDN unpkg.com is included in the `<head>` to style the map correctly. Note the SRI is provided to verify the package from the CDN (see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity for more information)
-    - Downloading and using the package is an option, but not a best practice (see https://leafletjs.com/download.html). 
-    - A `<div>` element with an id of "map" is where our map will appear. We set a height style to ensure it's visible.
-    - The Leaflet JavaScript library is included right before our script tag. This ensures it's loaded before we try to use it in our JavaScript code.
+###    In this HTML skeleton:
 
-2. **Initializing the Map**: In the JavaScript section within the `<script>` tags, you can initialize your map and set its view to a specific geographical point and zoom level:
+- The Leaflet CSS file from the CDN unpkg.com is included in the `<head>` to style the map correctly. Note the SRI is provided to verify the package from the CDN (see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity for more information)
+- Downloading and using the package is an option, but not a best practice (see https://leafletjs.com/download.html). 
+- A `<div>` element with an id of "map" is where our map will appear. We set a height style to ensure it's visible. Make this 100% on height and width to make it display the full screen. 
+- The Leaflet JavaScript library is included right before our script tag. This ensures it's loaded before we try to use it in our JavaScript code.
+
+3. **Initializing the Map**: In the JavaScript section within the `<script>` tags, you can initialize your map and set its view to a specific geographical point and zoom level:
 
 ```javascript
 var map = L.map('map').setView([44.342, -78.741], 13);
