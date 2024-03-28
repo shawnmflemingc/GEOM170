@@ -6,7 +6,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
 
 1. **HTML File**: Start by creating an HTML file. This will be the backbone of your project. Here's a minimal example requiring you to fill in the javascript code (provided below) in the script section:
 
-```html
+    ```html
     <!DOCTYPE html>
     <html>
     <head>
@@ -21,7 +21,7 @@ Leaflet can be an exciting journey into interactive web mapping. Leaflet is a wi
         </script>
     </body>
     </html>
-```
+    ```
 
     In this HTML skeleton:
     - The Leaflet CSS file from the CDN unpkg.com is included in the `<head>` to style the map correctly. Note the SRI is provided to verify the package from the CDN (see https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity for more information)
