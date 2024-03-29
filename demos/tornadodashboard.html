@@ -28,7 +28,7 @@
     var map = L.map('myMapId').setView([44.342, -78.741], 8); 
 
 	L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-		attribution: '(C) OpenStreetMap contributors'
+		attribution: '(C) OpenStreetMap contributors, NTP'
 	}).addTo(map);
 
 	var geojsonLayer;
@@ -38,7 +38,7 @@
 		.then(data => {
 			geojsonLayer = L.geoJSON(data, {
 				onEachFeature: function(feature, layer) {
-					layer.bindPopup(feature.properties.month); // Adjust based on your GeoJSON structure
+					layer.bindPopup(feature.properties.event_type + ' ' + feature.properties.month); // Adjust based on your GeoJSON structure
 				}
 			}).addTo(map);
 
