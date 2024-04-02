@@ -252,6 +252,6 @@ JavaScript introduced [nullish coalescing](https://developer.mozilla.org/en-US/d
 
 ## 10. **`null` vs. `undefined`**
 
-JavaScript has both `[null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#null_type)` and `[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#undefined_type)`, which can both represent a lack of value but are used in slightly different contexts. `null` is often used to represent an intentional absence of value, whereas `undefined` is used when a value has not been assigned.
+JavaScript has both [`null`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#null_type) and [`undefined`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#undefined_type), which can both represent a lack of value but are used in slightly different contexts. `null` is often used to represent an intentional absence of value, whereas `undefined` is used when a value has not been assigned.
 
 Being aware of these aspects of JavaScript will help you write more effective and error-free code. As you gain experience, many of these quirks and features will become second nature, and you'll start to see how they can be used to your advantage in writing efficient and powerful JavaScript code.
