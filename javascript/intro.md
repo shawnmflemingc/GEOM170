@@ -1,4 +1,4 @@
-#Getting Started with JavaScript
+# Getting Started with JavaScript
 
 JavaScript is a powerful and versatile programming language that plays a pivotal role in modern web development, enabling dynamic content and interactive user interfaces. With basic programming knowledge and an understanding of HTML and CSS you can dive into JavaScript and explore its capabilities to enhance web pages.
 
