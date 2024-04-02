@@ -1,4 +1,4 @@
-# Mastering Layout and Design of Web Pages
+# Introduction to Layout for Web Pages
 
 Understanding how elements are structured and styled on a web page can be complex at first, but there are easy techniques. This example will guide you through creating a simple webpage layout, emphasizing the Box Model concepts of margin, border, padding, and content.
 
