@@ -6,7 +6,7 @@ JavaScript allows you to add a layer of interactivity to your web pages that HTM
 
 ## Recommended Learning Steps
 
-1. **JavaScript Syntax and Basics**: JavaScript shares many common features with other programming languages, such as variables, control structures (if-else statements, loops), functions, and objects. Getting comfortable with these concepts in the context of JavaScript will be your first step.
+1. **[JavaScript Grammar and Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Grammar_and_types)**: JavaScript shares many common features with other programming languages, such as variables, control structures (if-else statements, loops), functions, and objects. Getting comfortable with these concepts in the context of JavaScript will be your first step.
 
 2. **DOM Manipulation**: The Document Object Model (DOM) is a programming interface for web documents. It represents the page structure as a tree of objects, which JavaScript can interact with. Learning how to select, modify, add, or remove HTML elements and attributes will allow you to dynamically change the content and style of your web pages.
 
@@ -19,12 +19,10 @@ JavaScript allows you to add a layer of interactivity to your web pages that HTM
 ## Free Learning Resources
 
 - **[w3schools](https://www.w3schools.com/js/)**: This comprehensive resource provides detailed documentation and tutorials on JavaScript and web development.
-- **[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)**: Another comprehensive resource that you may consider useful.
+- **[MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)**: Another comprehensive resource that you may consider useful, including a guide for [absolute beginners](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) through to advanced concepts.
 - **[JavaScript.info](https://javascript.info/)**: Offers a deep dive into JavaScript, covering everything from basics to advanced topics in an easy-to-understand manner.
 
 Embrace the process of learning by "doing" which will contribute to your understanding and proficiency in JavaScript and web development.
-
-Creating a hands-on lab is a fantastic way to introduce someone to JavaScript, especially if they already have a basic understanding of programming and web development with HTML and CSS. This lab will guide you through creating a simple but interactive web page that changes dynamically based on user input. By the end of this lab, you'll have a better understanding of JavaScript syntax, DOM manipulation, and event handling.
 
 # Try it: Personalized Greeting Web Page
 
@@ -111,7 +109,7 @@ Once you've completed the basic lab, consider adding more features to practice a
 
 # Debugging JavaScript using Chrome's Developers Tools
 
-Most browsers like Chrome offer powerful tools to make debugging easy. The Chrome Developer Tools (often referred to as DevTools) provide a rich set of features for debugging JavaScript. Here's a guide on how to effectively use the Chrome DevTools for debugging your JavaScript code:
+Most browsers like Chrome offer powerful tools to make debugging easy. The Chrome Developer Tools (referred to as DevTools) provide a rich set of features for debugging JavaScript. Here's a guide on how to effectively use the Chrome DevTools for debugging your JavaScript code:
 
 ## Opening Chrome DevTools
 
@@ -142,7 +140,7 @@ The Console provides a space where you can view logged messages, interact with y
 
 - **Interactive Shell**: You can execute JavaScript directly in the Console, which is useful for testing snippets of code or inspecting variables.
 
-#### 3. **Watch Expressions and Call Stack**
+### 3. **Watch Expressions and Call Stack**
 
 When your code execution is paused (e.g., at a breakpoint), you can use the right sidebar in the Sources panel to dive deeper.
 
@@ -150,15 +148,19 @@ When your code execution is paused (e.g., at a breakpoint), you can use the righ
 
 - **Call Stack**: This shows you the path your code took to reach the current point of execution, allowing you to trace back through function calls.
 
-### 4. **Step Over, Into, Out**
+### 4. **Trigger the Debugger using code**
+
+The `[debugger;](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)` statement in code will invoke any available debugging functionality in any browser, including Chrome. It is similar to setting a breakpoint using the browser and only breaks when the DevTools are open in the browser, giving you control how it is called and allowing it to execute with or without stopping by showing or hiding the DevTools. 
+
+### 5. **Step Over, Into, Out**
 
 While paused at a breakpoint, you can control the execution of your code using these commands:
 
-- **Step Over (`F10`/`Cmd+'` on Mac)**: Executes the next line of code, but if it's a function, it doesn't dive into its code.
-- **Step Into (`F11`/`Cmd+;` on Mac)**: If the next line is a function call, it dives into and debugs inside the function.
-- **Step Out (`Shift+F11`/`Shift+Cmd+;` on Mac)**: Steps out of the current function and returns to the caller function.
+- **Step Over (`F10`)**: Executes the next line of code, but if it's a function, it doesn't dive into its code.
+- **Step Into (`F11`)**: If the next line is a function call, it dives into and debugs inside the function.
+- **Step Out (`Shift+F11`)**: Steps out of the current function and returns to the caller function.
 
-### 5. **Network Requests**
+### 6. **Network Requests**
 
 If your JavaScript involves network requests (e.g., using `fetch` or `XMLHttpRequest`), you can monitor these in the `Network` panel. This allows you to see the request and response details, which can be crucial for debugging API interactions.
 
@@ -172,13 +174,13 @@ If your JavaScript involves network requests (e.g., using `fetch` or `XMLHttpReq
 
 By familiarizing yourself with these tools and techniques, you'll be well-equipped to tackle bugs and improve the quality of your JavaScript code. Remember, debugging is a skill that improves with practice, so don't hesitate to dive in and start experimenting with Chrome DevTools.
 
-# Considerations and Quirks of JavaScript
+# Quirks of JavaScript
 
 JavaScript, like any programming language, has its unique characteristics and quirks, some of which can be especially noticeable to someone coming from a different programming background, such as Python. Here are some common aspects and potential pitfalls that newcomers to JavaScript should be aware of:
 
 ## 1. **Dynamic Typing**
 
-JavaScript is dynamically typed, which means variables do not have types; values do. This can lead to unexpected behavior, especially for those coming from statically typed languages.
+[JavaScript is dynamically typed](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures), which means variables do not have types; values do. This can lead to unexpected behavior, especially for those coming from statically typed languages.
 
 - **Example**: Adding a number and a string will result in string concatenation in JavaScript.
 
@@ -188,13 +190,13 @@ JavaScript is dynamically typed, which means variables do not have types; values
 
 ## 2. **== vs. ===**
 
-JavaScript has two types of equality operators: `==` (loose equality) and `===` (strict equality). The `==` operator performs type coercion if the types do not match, which can lead to unintuitive results.
+JavaScript has many types of [equality operators](https://www.w3schools.com/js/js_comparisons.asp), for example `==` (loose equality) and `===` (strict equality). The `==` operator performs type coercion if the types do not match, which can lead to unintuitive results.
 
 - **Best Practice**: Always use `===` for comparison to avoid unexpected type coercion.
 
 ## 3. **Hoisting**
 
-Variable and function declarations are "hoisted" to the top of their containing scope in JavaScript, meaning they are processed before any code is executed.
+Variable and function declarations are "[hoisted](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function#hoisting)" to the top of their containing scope in JavaScript, meaning they are processed before any code is executed.
 
 - **Quirk**: A function or a variable can be used before it's declared.
 
@@ -205,13 +207,13 @@ Variable and function declarations are "hoisted" to the top of their containing 
 
 ## 4. **`var`, `let`, and `const`**
 
-JavaScript variables can be declared using `var`, `let`, or `const`, each with different scoping rules. `var` has function scope, while `let` and `const` have block scope, which is more intuitive for programmers coming from other C-like languages.
+JavaScript variables can be declared using [`var`, `let`, or `const`](https://www.w3schools.com/js/js_variables.asp), each with different scoping rules. `var` has function scope, while `let` and `const` have block scope, which is more intuitive for programmers coming from other C-like languages.
 
 - **Best Practice**: Prefer `let` and `const` over `var` to avoid unexpected scoping issues.
 
 ## 5. **Callback Functions and Asynchronous Behavior**
 
-JavaScript heavily relies on callbacks and promises for asynchronous operations, which can be a new concept for those used to more linear, synchronous execution.
+JavaScript heavily relies on callbacks and promises for [asynchronous operations](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing), which can be a new concept for those used to more linear, synchronous execution.
 
 - **Example**: Fetching data from a web API.
 
@@ -224,23 +226,23 @@ JavaScript heavily relies on callbacks and promises for asynchronous operations,
 
 ## 6. **`this` Keyword**
 
-The context of `this` in JavaScript can be confusing, as it depends on how a function is called, not where it is defined. This differs from many other languages where `this` (or its equivalent) always refers to the current class instance.
+The context of [`this` in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this) can be confusing, as it depends on how a function is called, not where it is defined. This differs from many other languages where `this` (or its equivalent) always refers to the current class instance.
 
 - **Tip**: Arrow functions do not have their own `this` context but inherit it from the parent scope, which can help avoid some common pitfalls.
 
 ## 7. **Prototype-Based Inheritance**
 
-JavaScript uses a prototype-based inheritance model, which is different from the classical inheritance model in languages like Java or C++. Understanding prototypes is crucial for working with object-oriented JavaScript.
+JavaScript uses a [prototype-based inheritance model](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain), which is different from the classical inheritance model in languages like Python. Understanding prototypes is crucial for working with object-oriented JavaScript. Python uses class-based inheritance, a more traditional form of OOP where classes are blueprints for creating objects, and inheritance is achieved by defining a class that takes another class as its base. JavaScript uses prototypes for inheritance, meaning objects inherit directly from other objects. Python uses class-based inheritance, where inheritance is defined through class definitions.
 
 ## 8. **Semicolon Insertion**
 
-JavaScript has automatic semicolon insertion, which means it can automatically add semicolons at the end of statements. However, relying on this can lead to subtle bugs.
+JavaScript has [automatic semicolon insertion](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#automatic_semicolon_insertion), which means it can automatically add semicolons at the end of statements. However, relying on this can lead to subtle bugs.
 
 - **Best Practice**: Always explicitly use semicolons to mark the end of statements.
 
 ## 9. **Nullish Coalescing and Optional Chaining**
 
-JavaScript introduced nullish coalescing (`??`) and optional chaining (`?.`) operators to handle undefined or null values more gracefully.
+JavaScript introduced [nullish coalescing](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_assignment) (`??`) and [optional chaining](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining) (`?.`) operators to handle undefined or null values more gracefully.
 
 - **Example**: Accessing nested object properties safely.
 
@@ -250,6 +252,6 @@ JavaScript introduced nullish coalescing (`??`) and optional chaining (`?.`) ope
 
 ## 10. **`null` vs. `undefined`**
 
-JavaScript has both `null` and `undefined`, which can both represent a lack of value but are used in slightly different contexts. `null` is often used to represent an intentional absence of value, whereas `undefined` is used when a value has not been assigned.
+JavaScript has both `[null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#null_type)` and `[undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#undefined_type)`, which can both represent a lack of value but are used in slightly different contexts. `null` is often used to represent an intentional absence of value, whereas `undefined` is used when a value has not been assigned.
 
 Being aware of these aspects of JavaScript will help you write more effective and error-free code. As you gain experience, many of these quirks and features will become second nature, and you'll start to see how they can be used to your advantage in writing efficient and powerful JavaScript code.
