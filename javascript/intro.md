@@ -150,7 +150,7 @@ When your code execution is paused (e.g., at a breakpoint), you can use the righ
 
 ### 4. **Trigger the Debugger using code**
 
-The `[debugger;](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger)` statement in code will invoke any available debugging functionality in any browser, including Chrome. It is similar to setting a breakpoint using the browser and only breaks when the DevTools are open in the browser, giving you control how it is called and allowing it to execute with or without stopping by showing or hiding the DevTools. 
+The [`debugger;`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement in code will invoke any available debugging functionality in any browser, including Chrome. It is similar to setting a breakpoint using the browser and only breaks when the DevTools are open in the browser, giving you control how it is called and allowing it to execute with or without stopping by showing or hiding the DevTools. 
 
 ### 5. **Step Over, Into, Out**
 
